@@ -1,0 +1,11 @@
+name: DVRedux
+version: 1.0
+author: moderator_man
+main: net.oldschoolminecraft.dvr.DVRedux
+commands:
+  vote:
+    description: Create or cast a vote for day or rain.
+    usage: /vote <day|rain|yes|no>
+  dvadmin:
+    description: Admin commands for DVRedux plugin.
+    usage: /dvadmin <end|status|reload>

@@ -1,10 +1,13 @@
 package net.oldschoolminecraft.dvr;
 
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.weather.WeatherChangeEvent;
 import org.bukkit.event.weather.WeatherListener;
 
-public class WeatherHandler extends WeatherListener
+public class WeatherHandler implements Listener
 {
+    @EventHandler
     public void onWeatherChange(WeatherChangeEvent event)
     {
         if (event.toWeatherState() && !DVRedux.getInstance().shouldWeatherBeOn)

@@ -137,6 +137,7 @@ public class DVRedux extends JavaPlugin
                     world.setTime(0);
                     Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', config.getString("messages.succeeded")));
                 } else if (currentVote.getType() == VoteType.RAIN) {
+                    shouldWeatherBeOn = true;
                     world.setStorm(true);
                     Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', config.getString("messages.succeededRain")));
                 }

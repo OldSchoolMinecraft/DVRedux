@@ -99,7 +99,16 @@ public class DVRedux extends JavaPlugin
                         return true;
                     }
 
-                    boolean added = currentVote.castVote(player.getName(), sub.equalsIgnoreCase("yes"));
+                    boolean yes = sub.startsWith("y");
+                    boolean no = sub.startsWith("n");
+
+                    if (!(yes || no))
+                    {
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cUsage: /vote <day|rain|yes|no>"));
+                        return true;
+                    }
+
+                    boolean added = currentVote.castVote(player.getName(), yes);
 
                     if (!added) player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cYour vote has already been counted."));
                     else player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aYour vote has been counted!"));
